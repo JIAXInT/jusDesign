@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import Button from "./components/Button/Button.vue";
+import type { ButtonInstance } from "./components/Button/type";
 import Collapse from "./components/Collapse/Collapse.vue";
 import CollapseItem from "./components/Collapse/CollapseItem.vue";
-import type { ButtonInstance } from "./components/Button/type";
+import Icon from "./components/Icon/Icon.vue";
 
 const buttonRef = ref<ButtonInstance | null>(null);
 const openValue = ref(["a"]);
@@ -17,6 +18,7 @@ onMounted(() => {
 
 <template>
   <main>
+    <h1>Buttons:</h1>
     <Button type="primary">primary</Button>
     <Button type="success">success</Button>
     <Button type="warning">warning</Button>
@@ -33,6 +35,9 @@ onMounted(() => {
     <Button type="info" plain disabled>info</Button>
     <br />
     <br />
+    <Button type="primary" size="large" plain loading>loading</Button>
+    <Button type="primary" size="large" icon="arrow-up">Icon</Button>
+    <h1>Collapse:</h1>
     <Collapse v-model="openValue" accordion>
       <CollapseItem name="a">
         <template #title>
@@ -47,6 +52,9 @@ onMounted(() => {
         <div>cccc</div>
       </CollapseItem>
     </Collapse>
+    <br /><br />
+    <h1>Icons:</h1>
+    <Icon icon="arrow-up" size="2xl" type="warning" color="green" />
   </main>
 </template>
 

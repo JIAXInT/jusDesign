@@ -1,0 +1,36 @@
+.j-icon {
+  --j-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--j-icon-color);
+  font-size: inherit;
+}
+
+.j-icon-danger {
+  --j-icon-color: var(--j-color-danger);
+}
+
+.j-icon-info {
+  --j-icon-color: var(--j-color-info);
+}
+
+.j-icon-success {
+  --j-icon-color: var(--j-color-success);
+}
+
+.j-icon-warning {
+  --j-icon-color: var(--j-color-warning);
+}
+
+.j-icon-primary {
+  --j-icon-color: var(--j-color-primary);
+}
+
+@each $val in primary, info, success, warning, danger {
+  .j-icon--$(val) {
+    --j-icon-color: var(--j-color-$(val));
+  }
+}
