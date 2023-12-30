@@ -5,6 +5,7 @@ import type { ButtonInstance } from "./components/Button/type";
 import Collapse from "./components/Collapse/Collapse.vue";
 import CollapseItem from "./components/Collapse/CollapseItem.vue";
 import Icon from "./components/Icon/Icon.vue";
+import Alert from "./components/Alert/Alert.vue";
 
 const buttonRef = ref<ButtonInstance | null>(null);
 const openValue = ref(["a"]);
@@ -55,6 +56,16 @@ onMounted(() => {
     <br /><br />
     <h1>Icons:</h1>
     <Icon icon="arrow-up" size="2xl" type="warning" color="green" />
+    <br /><br />
+    <h1>Alert:</h1>
+    <Alert type="success" effect="light" :closeable="true">this is Alert</Alert>
+    <Alert type="info" effect="light">this is Alert</Alert>
+    <Alert type="warning" effect="light">this is Alert</Alert>
+    <Alert type="danger" effect="light">this is Alert</Alert>
+    <Alert type="success" effect="dark">this is Alert</Alert>
+    <Alert type="info" effect="dark">this is Alert</Alert>
+    <Alert type="warning" effect="dark">this is Alert</Alert>
+    <Alert type="danger" effect="dark">this is Alert</Alert>
   </main>
 </template>
 
