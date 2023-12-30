@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import Button from "./components/Button/Button.vue";
+import Collapse from "./components/Collapse/Collapse.vue";
+import CollapseItem from "./components/Collapse/CollapseItem.vue";
 import type { ButtonInstance } from "./components/Button/type";
 
 const buttonRef = ref<ButtonInstance | null>(null);
+const openValue = ref(["a"]);
 
 onMounted(() => {
   if (buttonRef.value) {
@@ -28,6 +31,22 @@ onMounted(() => {
     <Button type="danger" plain round>danger</Button>
     <Button type="info" plain circle>info</Button>
     <Button type="info" plain disabled>info</Button>
+    <br />
+    <br />
+    <Collapse v-model="openValue" accordion>
+      <CollapseItem name="a">
+        <template #title>
+          <h1>title</h1>
+        </template>
+        <div>aaa</div>
+      </CollapseItem>
+      <CollapseItem name="b" title="bbb">
+        <div>bbbb</div>
+      </CollapseItem>
+      <CollapseItem name="c" title="ccc" disabled>
+        <div>cccc</div>
+      </CollapseItem>
+    </Collapse>
   </main>
 </template>
 
