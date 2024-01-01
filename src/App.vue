@@ -1,14 +1,30 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import Button from "./components/Button/Button.vue";
-import type { ButtonInstance } from "./components/Button/type";
-import Collapse from "./components/Collapse/Collapse.vue";
-import CollapseItem from "./components/Collapse/CollapseItem.vue";
-import Icon from "./components/Icon/Icon.vue";
-import Alert from "./components/Alert/Alert.vue";
+import { ref, onMounted } from 'vue';
+import Button from './components/Button/Button.vue';
+import type { ButtonInstance } from './components/Button/type';
+import Collapse from './components/Collapse/Collapse.vue';
+import CollapseItem from './components/Collapse/CollapseItem.vue';
+import Icon from './components/Icon/Icon.vue';
+import Alert from './components/Alert/Alert.vue';
+import Tooltip from './components/Tooltip/Tooltip.vue';
+import { TooltipInstance } from './components/Tooltip/type';
+import type { Options } from '@popperjs/core';
 
 const buttonRef = ref<ButtonInstance | null>(null);
-const openValue = ref(["a"]);
+const openValue = ref(['a']);
+const tooltipRef = ref<TooltipInstance>(null);
+
+const options: Partial<Options> = {
+  placement: 'right-end',
+};
+
+const openTooltip = () => {
+  tooltipRef.value?.show();
+  console.log(tooltipRef.value);
+};
+const closeTooltip = () => {
+  tooltipRef.value?.hide();
+};
 
 onMounted(() => {
   if (buttonRef.value) {
@@ -66,6 +82,24 @@ onMounted(() => {
     <Alert type="info" effect="dark">this is Alert</Alert>
     <Alert type="warning" effect="dark">this is Alert</Alert>
     <Alert type="danger" effect="dark">this is Alert</Alert>
+    <br /><br />
+    <h1>Tooltip:</h1>
+    <Tooltip
+      placement="top"
+      trigger="hover"
+      ref="tooltipRef"
+      :open-delay="200"
+      :close-delay="200"
+    >
+      <Button type="primary">hover me</Button>
+      <template #content>
+        <h1>this is tooltip</h1>
+      </template>
+    </Tooltip>
+    <br />
+    <br />
+    <Button type="primary" @click="openTooltip">open Tooltip </Button>
+    <Button type="primary" @click="closeTooltip">close Tooltip</Button>
   </main>
 </template>
 
