@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, h } from 'vue';
 import Button from './components/Button/Button.vue';
 import type { ButtonInstance } from './components/Button/type';
 import Collapse from './components/Collapse/Collapse.vue';
@@ -8,15 +8,34 @@ import Icon from './components/Icon/Icon.vue';
 import Alert from './components/Alert/Alert.vue';
 import Tooltip from './components/Tooltip/Tooltip.vue';
 import { TooltipInstance } from './components/Tooltip/type';
-import type { Options } from '@popperjs/core';
+// import type { Options } from '@popperjs/core';
+import Dropdown from './components/Dropdown/Dropdown.vue';
+import type { MenuOption } from './components/Dropdown/type';
 
 const buttonRef = ref<ButtonInstance | null>(null);
 const openValue = ref(['a']);
 const tooltipRef = ref<TooltipInstance>(null);
 
-const options: Partial<Options> = {
-  placement: 'right-end',
-};
+const options: MenuOption[] = [
+  {
+    key: '1',
+    label: h('b', 'this is bold'),
+  },
+  {
+    key: '2',
+    label: '2',
+    disabled: true,
+  },
+  {
+    key: '3',
+    label: '3',
+    disabled: true,
+  },
+  {
+    key: '4',
+    label: '4',
+  },
+];
 
 const openTooltip = () => {
   tooltipRef.value?.show();
@@ -86,7 +105,7 @@ onMounted(() => {
     <h1>Tooltip:</h1>
     <Tooltip
       placement="top"
-      trigger="hover"
+      trigger="click"
       ref="tooltipRef"
       :open-delay="200"
       :close-delay="200"
@@ -98,6 +117,14 @@ onMounted(() => {
     </Tooltip>
     <br />
     <br />
+    <Button type="primary" @click="openTooltip">open Tooltip </Button>
+    <Button type="primary" @click="closeTooltip">close Tooltip</Button>
+    <br /><br />
+    <h1>Dropdown:</h1>
+    <Dropdown placement="top" trigger="click" :menu-options="options">
+      <Button type="primary">hover me</Button>
+    </Dropdown>
+    <br /><br />
     <Button type="primary" @click="openTooltip">open Tooltip </Button>
     <Button type="primary" @click="closeTooltip">close Tooltip</Button>
   </main>

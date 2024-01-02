@@ -80,7 +80,7 @@ const togglePoper = () => {
   if (isOpen.value) {
     closeFinal();
   } else {
-    openFinal;
+    openFinal();
   }
 };
 
