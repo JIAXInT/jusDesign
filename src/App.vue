@@ -11,6 +11,8 @@ import { TooltipInstance } from './components/Tooltip/type';
 // import type { Options } from '@popperjs/core';
 import Dropdown from './components/Dropdown/Dropdown.vue';
 import type { MenuOption } from './components/Dropdown/type';
+// import Message from './components/Message/Message.vue';
+import { createMessage } from './components/Message/method';
 
 const buttonRef = ref<ButtonInstance | null>(null);
 const openValue = ref(['a']);
@@ -50,6 +52,35 @@ onMounted(() => {
     console.log(buttonRef.value.ref);
   }
 });
+
+const infoMessage = () => {
+  createMessage({
+    message: 'info message',
+    type: 'info',
+    showClose: true,
+  });
+};
+const successMessage = () => {
+  createMessage({
+    message: 'success message',
+    type: 'success',
+    showClose: true,
+  });
+};
+const errorMessage = () => {
+  createMessage({
+    message: 'error message',
+    type: 'danger',
+    showClose: true,
+  });
+};
+const warningMessage = () => {
+  createMessage({
+    message: 'warning message',
+    type: 'warning',
+    showClose: true,
+  });
+};
 </script>
 
 <template>
@@ -127,6 +158,12 @@ onMounted(() => {
     <br /><br />
     <Button type="primary" @click="openTooltip">open Tooltip </Button>
     <Button type="primary" @click="closeTooltip">close Tooltip</Button>
+    <br /><br />
+    <h1>Message:</h1>
+    <Button type="info" @click="infoMessage">info Message</Button>
+    <Button type="success" @click="successMessage">success Message</Button>
+    <Button type="danger" @click="errorMessage">error Message</Button>
+    <Button type="warning" @click="warningMessage">warning Message</Button>
   </main>
 </template>
 
