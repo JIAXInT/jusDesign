@@ -7,8 +7,8 @@ import {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'My Awesome Project',
-  description: 'A VitePress Site',
+  title: 'JusDesign',
+  description: '适用于vue的组件库',
   // srcDir: 'components',
   vite: {
     resolve: {
@@ -26,26 +26,19 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' },
+      { text: '首页', link: '/' },
+      { text: '开始使用', link: '/components/button' },
     ],
 
     sidebar: [
       {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
-        ],
-      },
-      {
-        text: 'Basic',
-        items: [{ text: 'Button', link: '/components/button' }],
+        text: '基础组件',
+        items: [{ text: 'Button 按钮', link: '/components/button' }],
       },
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'github', link: 'https://github.com/JIAXInT/jusDesign' },
     ],
   },
 });

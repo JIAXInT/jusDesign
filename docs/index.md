@@ -3,16 +3,16 @@
 layout: home
 
 hero:
-  name: 'My Awesome Project'
-  text: 'A VitePress Site'
-  tagline: My great project tagline
+  name: 'JusDesign'
+  text: '适用于vue的组件库'
+  tagline: 一个适用于vue的轻便简介基础组件库
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 开始使用
+      link: /components/button
+    # - theme: alt
+    #   text: API Examples
+    #   link: /api-examples
 
 features:
   - title: Feature A
