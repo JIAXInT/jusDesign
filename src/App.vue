@@ -13,6 +13,7 @@ import Dropdown from './components/Dropdown/Dropdown.vue';
 import type { MenuOption } from './components/Dropdown/type';
 // import Message from './components/Message/Message.vue';
 import { createMessage } from './components/Message/method';
+import Input from './components/Input/Input.vue';
 
 const buttonRef = ref<ButtonInstance | null>(null);
 const openValue = ref(['a']);
@@ -164,6 +165,9 @@ const warningMessage = () => {
     <Button type="success" @click="successMessage">success Message</Button>
     <Button type="danger" @click="errorMessage">error Message</Button>
     <Button type="warning" @click="warningMessage">warning Message</Button>
+    <br /><br />
+    <h1>Input:</h1>
+    <Input></Input>
   </main>
 </template>
 
