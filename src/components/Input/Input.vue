@@ -51,6 +51,7 @@
             v-if="showClear"
             class="j-input__clear"
             @click="clear"
+            @mousedown.prevent="NOOP"
           ></Icon>
           <Icon
             icon="eye"
@@ -137,6 +138,7 @@ const handleInput = () => {
 const handleChange = () => {
   emits('change', innerValue.value);
 };
+const NOOP = () => {};
 const handleFocus = (event: FocusEvent) => {
   isFocus.value = true;
   emits('focus', event);
