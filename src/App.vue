@@ -14,6 +14,7 @@ import type { MenuOption } from './components/Dropdown/type';
 // import Message from './components/Message/Message.vue';
 import { createMessage } from './components/Message/method';
 import Input from './components/Input/Input.vue';
+import Switch from './components/Switch/Switch.vue';
 
 const buttonRef = ref<ButtonInstance | null>(null);
 const openValue = ref(['a']);
@@ -168,6 +169,15 @@ const warningMessage = () => {
     <br /><br />
     <h1>Input:</h1>
     <Input></Input>
+    <br /><br />
+    <h1>Switch</h1>
+    <Switch
+      v-model="openValue"
+      active-text="on"
+      inactive-text="off"
+      active-value="right"
+      inactive-value="wrong"
+    />
   </main>
 </template>
 
