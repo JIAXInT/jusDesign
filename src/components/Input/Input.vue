@@ -43,6 +43,7 @@
         <span
           v-if="$slots.suffix || showClear || showPasswordArea"
           class="j-input__suffix"
+          @click="keepFocus"
         >
           <slot name="suffix"></slot>
           <Icon
@@ -94,7 +95,7 @@
 </template>
 
 <script setup lang="ts">
-import { Ref, computed, ref, useAttrs, watch } from 'vue';
+import { Ref, computed, nextTick, ref, useAttrs, watch } from 'vue';
 import type { InputProps, InputEmits } from './type';
 import Icon from '../Icon/Icon.vue';
 
@@ -124,6 +125,10 @@ const showPasswordArea = computed(
 );
 const tooglePasswordVisible = () => {
   passwordVisible.value = !passwordVisible.value;
+};
+const keepFocus = async () => {
+  await nextTick();
+  inputRef.value.focus();
 };
 const handleInput = () => {
   emits('update:modelValue', innerValue.value);
