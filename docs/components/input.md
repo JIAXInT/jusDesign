@@ -53,12 +53,12 @@ description: Input 组件的文档
 ## 属性
 
 | Name                | Description                                | Type      | Default |
-| ------------------- | ------------------------------------------ | --------- | ------- | --- |
+| ------------------- | ------------------------------------------ | --------- | ------- |
 | type                | input 原生属性                             | `string`  | text    |
 | model-value/v-model | 绑定值                                     | `string`  |         |
 | disabled            | 是否禁用                                   | `boolean` | false   |
 | placeholder         | 输入框占位文本                             | `string`  |         |
-| size                | 输入框尺寸，只在 type 不为’textarea‘时有效 | `large`   | `small` |     |
+| size                | 输入框尺寸，只在 type 不为’textarea‘时有效 | `large`   | `small` |
 | show-password       | 是否显示切换密码图标                       | `bpplen`  | false   |
 | clearable           | 是否显示清楚按钮                           | `boolen`  | false   |
 | reanonly            | 原生 readonly 属性，是否只读               | `boolen`  | false   |

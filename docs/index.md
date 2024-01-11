@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: 'JusDesign'
-  text: '适用于vue的组件库'
-  tagline: 一个适用于vue的轻便简介基础组件库
+  text: '适用于Vue的组件库'
+  tagline: 一个轻便简洁的Vue基础组件库
   actions:
     - theme: brand
       text: 开始使用
