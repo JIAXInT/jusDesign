@@ -15,6 +15,7 @@ import type { MenuOption } from './components/Dropdown/type';
 import { createMessage } from './components/Message/method';
 import Input from './components/Input/Input.vue';
 import Switch from './components/Switch/Switch.vue';
+import Select from './components/Select/Select.vue';
 
 const buttonRef = ref<ButtonInstance | null>(null);
 const openValue = ref(['a']);
@@ -83,6 +84,14 @@ const warningMessage = () => {
     showClose: true,
   });
 };
+
+const test = ref('');
+const options2 = [
+  { label: '1', value: '1' },
+  { label: '2', value: '2' },
+  { label: '3', value: '3' },
+  { label: '4', value: '4' },
+];
 </script>
 
 <template>
@@ -178,6 +187,9 @@ const warningMessage = () => {
       active-value="right"
       inactive-value="wrong"
     />
+    <br /><br />
+    <h1>Select</h1>
+    <Select v-model="test" :options="options2" placeholder="select"></Select>
   </main>
 </template>
 

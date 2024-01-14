@@ -10,6 +10,7 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest',
+    requireConfigFile: false,
   },
   rules: {
     'vue/multi-word-component-names': 'off',
