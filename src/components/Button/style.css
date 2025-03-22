@@ -81,7 +81,7 @@
     background-color: var(--j-button-disabled-bg-color);
     border-color: var(--j-button-disabled-border-color);
   }
-  [class*="j-icon"] + span {
+  [class*='j-icon'] + span {
     margin-left: 6px;
   }
 }

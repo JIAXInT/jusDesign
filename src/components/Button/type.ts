@@ -1,8 +1,9 @@
-import type { PropType } from "vue";
-export type ButtonType = "primary" | "success" | "warning" | "danger" | "info";
-export type ButtonSize = "large" | "small";
-export type NativeType = "button" | "submit" | "reset";
+import type { PropType } from 'vue';
+export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info';
+export type ButtonSize = 'large' | 'small';
+export type NativeType = 'button' | 'submit' | 'reset';
 
+// 定义按钮组件的属性接口
 export interface ButtonProps {
   type?: ButtonType;
   size?: ButtonSize;
@@ -16,10 +17,12 @@ export interface ButtonProps {
   loading?: boolean;
 }
 
+// 定义按钮组件实例接口
 export interface ButtonInstance {
   ref: HTMLButtonElement;
 }
 
+// 定义按钮组件的属性配置对象
 export const buttonProps = {
   type: {
     type: String as PropType<ButtonType>,
